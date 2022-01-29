@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Web.Models;
+using Web.ViewModels;
 
 namespace Web.Controllers
 {
@@ -23,7 +24,8 @@ namespace Web.Controllers
             return View();
         }
 
-        public IActionResult Process() 
+        [HttpPost]
+        public IActionResult Process(SorterNameViewModel ViewModel) 
         {
 
             return View();
