@@ -1,0 +1,36 @@
+﻿@model Web.ViewModels.SorterNameViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Result Page</h1>
+
+<hr />
+<div class="container">
+    <div class="row">
+       
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="exampleInputPassword1">Before Sort!</label>
+                <textarea asp-for="FullNameBeforeSort" rows="40" cols="40"></textarea>
+            </div>
+
+            
+        </div>
+      
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">After Sort!</label>
+                <textarea asp-for="FullNameAfterSort" rows="40" cols="40"></textarea>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
