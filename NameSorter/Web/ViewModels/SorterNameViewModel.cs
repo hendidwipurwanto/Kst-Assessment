@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,8 +8,9 @@ namespace Web.ViewModels
 {
     public class SorterNameViewModel
     {
-        public int Id { get; set; }
-
-        public string FullName { get; set; }
+       
+        public IFormFile TextFile { get; set; }
+        public string FullNameBeforeSort { get; set; }
+        public string FullNameAfterSort { get; set; }
     }
 }
