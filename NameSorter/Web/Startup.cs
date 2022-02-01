@@ -30,6 +30,7 @@ namespace Web
             services.AddTransient<IExtractGivenNameRawToObjectService, ExtractGivenNameRawToObjectService>();
             services.AddTransient<IMapperGivenNameService, MapperGivenNameService>();
             services.AddTransient<ISortNameService, SortNameService>();
+            services.AddTransient<ICreateAndWriteFileService, CreateAndWriteFileService>();
             services.AddControllersWithViews();
         }
 

@@ -12,5 +12,7 @@ namespace Web.ViewModels
         public IFormFile TextFile { get; set; }
         public string FullNameBeforeSort { get; set; }
         public string FullNameAfterSort { get; set; }
+
+        public List<FileViewModel> FileViewModelList { get; set; }
     }
 }
