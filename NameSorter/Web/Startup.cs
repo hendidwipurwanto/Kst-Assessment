@@ -1,3 +1,5 @@
+using BAL.Services;
+using DAL.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,8 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Web.Repositories;
-using Web.Services;
+
 
 namespace Web
 {
@@ -26,7 +27,7 @@ namespace Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IDataRepository, DataRepository>();
-            services.AddTransient<IUploadFileService, UploadFileService>();
+            services.AddTransient<ISorterNameFileService, SorterNameFileService>();
             services.AddTransient<IExtractGivenNameRawToObjectService, ExtractGivenNameRawToObjectService>();
             services.AddTransient<IMapperGivenNameService, MapperGivenNameService>();
             services.AddTransient<ISortNameService, SortNameService>();

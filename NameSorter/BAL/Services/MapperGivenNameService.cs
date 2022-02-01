@@ -1,12 +1,13 @@
-﻿using System;
+﻿using DTO.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using Web.Models;
 
-namespace Web.Services
+namespace BAL.Services
 {
-    public class MapperGivenNameService : IMapperGivenNameService
+    public class MapperGivenNameService:IMapperGivenNameService
     {
         public Person Map1GivenName(string fullName)
         {
@@ -31,7 +32,7 @@ namespace Web.Services
 
 
             return result;
-            
+
         }
 
         public Person Map3GivenName(string fullName)
@@ -74,5 +75,6 @@ namespace Web.Services
 
             return result;
         }
+
     }
 }

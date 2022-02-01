@@ -14,4 +14,8 @@
     <Folder Include="wwwroot\UnsortedFiles\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BAL\BAL.csproj" />
+  </ItemGroup>
+
 </Project>

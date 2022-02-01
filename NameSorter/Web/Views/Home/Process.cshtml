@@ -1,35 +1,40 @@
-﻿@model Web.ViewModels.SorterNameViewModel
+﻿@model DTO.ViewModels.SorterNameViewModel
+<div class="text-center">
+    <h1 class="display-4">Name Sorter</h1>
+    <p>Created by Hendi dwi Purwanto.</p>
+</div>
+<form asp-action="Process" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <span asp-validation-for="TextFile" class="text-danger"></span>
+                <div class="form-group">
+                    <div class="custom-file">
 
-@{
-    ViewData["Title"] = "Process";
-}
+                        <input type="file" asp-for="TextFile" class="custom-file-input">
+                        <label class="custom-file-label" for="TextFile">upload Unsorted *.txt file here</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input style="width:100%;" type="submit" class="btn btn-success" value="Process to Sort!" />
 
-<h1>Process</h1>
+                </div>
 
-<h4>SorterNameViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Process">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FullNameBeforeSort" class="control-label"></label>
-                <input asp-for="FullNameBeforeSort" class="form-control" />
-                <span asp-validation-for="FullNameBeforeSort" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="FullNameAfterSort" class="control-label"></label>
-                <input asp-for="FullNameAfterSort" class="form-control" />
-                <span asp-validation-for="FullNameAfterSort" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+
+
+
+           
+        </div>
+
     </div>
-</div>
+    <div id="modal-section"></div>
+</form>
+@section Scripts
+{
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <script src="~/js/uploadFile.js"></script>
+
+}
 

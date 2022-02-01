@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DTO.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using Web.Models;
 
-namespace Web.Services
+namespace BAL.Services
 {
     public interface IMapperGivenNameService
     {
@@ -13,6 +14,5 @@ namespace Web.Services
         public Person Map3GivenName(string fullName);
         public Person Map4GivenName(string fullName);
         public Person Map5GivenName(string fullName);
-
     }
 }

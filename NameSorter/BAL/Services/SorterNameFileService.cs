@@ -1,19 +1,33 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace Web.Services
+namespace BAL.Services
 {
-    public class UploadFileService:IUploadFileService
+    public class SorterNameFileService:ISorterNameFileService
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public UploadFileService(IWebHostEnvironment webHostEnvironment)
+        public SorterNameFileService(IWebHostEnvironment webHostEnvironment)
         {
             _webHostEnvironment = webHostEnvironment;
+        }
+
+        public void DeleteAllFile()
+        {
+            string path = Path.Combine(_webHostEnvironment.WebRootPath, "sortedFiles");
+            System.IO.DirectoryInfo di = new DirectoryInfo(path);
+
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete();
+            }
+        
         }
 
         public string UploadFile(IFormFile file)
