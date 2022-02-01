@@ -3,11 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace Web.Repositories
+namespace DAL.Repositories
 {
-    public class DataRepository : IDataRepository
+    public class DataRepository:IDataRepository
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
         public DataRepository(IWebHostEnvironment webHostEnvironment)
@@ -22,8 +23,7 @@ namespace Web.Repositories
             {
                 System.GC.Collect();
                 System.GC.WaitForPendingFinalizers();
-                 rawText =System.IO.File.ReadAllText(path);
-              //  var textClean = rawText.Replace(System.Environment.NewLine, "|");
+                rawText = System.IO.File.ReadAllText(path);
             }
 
             return rawText;

@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BAL.Services;
+using DTO.ViewModels;
+using DTO.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 using System;
@@ -6,25 +9,23 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Web.Models;
-using Web.Services;
-using Web.ViewModels;
+
 
 namespace Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IUploadFileService _uploadFileService;
+        private readonly ISorterNameFileService _sorterNameFileService;
         private readonly IExtractGivenNameRawToObjectService _extractGivenNameService;
         private readonly ILogger<HomeController> _logger;
         private readonly IMapperGivenNameService _mapperrWith1GivenNameService;
         private readonly ISortNameService _sortNameService;
 
-        public HomeController(IMapperGivenNameService mapperrWith1GivenNameService,ISortNameService sortNameService,IExtractGivenNameRawToObjectService extractGivenNameService,IUploadFileService uploadFileService, ILogger<HomeController> logger)
+        public HomeController(IMapperGivenNameService mapperrWith1GivenNameService,ISortNameService sortNameService,IExtractGivenNameRawToObjectService extractGivenNameService,ISorterNameFileService sorterNameFileService, ILogger<HomeController> logger)
         {
             _mapperrWith1GivenNameService = mapperrWith1GivenNameService;
             _extractGivenNameService = extractGivenNameService;
-            _uploadFileService = uploadFileService;
+            _sorterNameFileService = sorterNameFileService;
             _logger = logger;
             _sortNameService = sortNameService;
         }
@@ -44,14 +45,30 @@ namespace Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Process(SorterNameViewModel viewModel)
         {
-            var fileName = _uploadFileService.UploadFile(viewModel.TextFile);
-            //var people = _extractGivenNameService.ExtractFileToStringResult(fileName);
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _sorterNameFileService.DeleteAllFile();
+                    var fileName = _sorterNameFileService.UploadFile(viewModel.TextFile);
+                    var peopleName = _extractGivenNameService.ExtractFileToStringResult(fileName);
+
+                    return RedirectToAction("Index", "Display", new { fileName = fileName });
+
+                }
+                catch (Exception ex)
+                {
+                   
+                    throw ex;
+                }
+               
+            }
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
+            return View(viewModel);
 
 
-            //var afterSort = _sortNameService.SortAll(people);
-           
 
-            return RedirectToAction("Index", "Display", new { fileName = fileName });
+            
 
         }
         

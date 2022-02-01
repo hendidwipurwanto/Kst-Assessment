@@ -1,11 +1,12 @@
-﻿using System;
+﻿using DAL.Repositories;
+using DTO.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using Web.Models;
-using Web.Repositories;
 
-namespace Web.Services
+namespace BAL.Services
 {
     public class ExtractGivenNameRawToObjectService : IExtractGivenNameRawToObjectService
     {
@@ -26,7 +27,7 @@ namespace Web.Services
             for (int i = 0; i < arrOfFullName.Length; i++)
             {
                 var temp = new Person();
-                 var arr= arrOfFullName[i].Split(" ");
+                var arr = arrOfFullName[i].Split(" ");
                 int givenNameCount = arr.Length;
                 string fullName = arrOfFullName[i];
                 switch (givenNameCount)
@@ -53,8 +54,8 @@ namespace Web.Services
                         break;
                 }
 
-                
-               
+
+
 
 
 
@@ -67,17 +68,18 @@ namespace Web.Services
             var people = new List<Person>();
             var result = string.Empty;
             var rawText = _dataRepository.ReadFile(fileName);
-            return rawText;            
+            return rawText;
         }
 
         public string ExtractFileToStringResult(List<Person> people)
-        {     string fullname = string.Empty;
-                string allnames = string.Empty;
+        {
+            string fullname = string.Empty;
+            string allnames = string.Empty;
             for (int i = 0; i < people.Count; i++)
             {
                 fullname = people[i].FirstName + " " + people[i].SecondName + "" + people[i].ThirdName + "" + people[i].FourthName + "" + people[i].FifthName + "" + people[i].SixthName + " " + people[i].SeventhName + "" + people[i].EighthName + "" + people[i].NinthName + "" + people[i].TenthName + " " + people[i].LastName;
 
-              allnames = allnames + "\r\n" + fullname;
+                allnames = allnames + "\r\n" + fullname;
 
 
             }

@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Web.Models;
+﻿using System.Collections.Generic;
+using System;
+using DTO.Models;
 
-namespace Web.Services
+namespace BAL.Services
 {
     public interface IExtractGivenNameRawToObjectService
     {
         public List<Person> ExtractFileToObjectResult(string fileName);
         public string ExtractFileToStringResult(string fileName);
         public string ExtractFileToStringResult(List<Person> people);
-
     }
 }

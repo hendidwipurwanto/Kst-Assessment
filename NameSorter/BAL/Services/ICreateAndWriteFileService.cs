@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace Web.Services
+namespace BAL.Services
 {
     public interface ICreateAndWriteFileService
     {

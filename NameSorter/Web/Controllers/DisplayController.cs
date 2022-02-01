@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using BAL.Services;
+using DTO.ViewModels;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Web.Services;
-using Web.ViewModels;
+
+
 
 namespace Web.Controllers
 {

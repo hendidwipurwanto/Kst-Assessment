@@ -2,12 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace Web.Services
+namespace BAL.Services
 {
-    public interface IUploadFileService
+    public interface ISorterNameFileService
     {
         string UploadFile(IFormFile file);
+        void DeleteAllFile();
     }
 }

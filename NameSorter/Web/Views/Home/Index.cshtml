@@ -1,4 +1,4 @@
-﻿@model Web.ViewModels.SorterNameViewModel
+﻿@model DTO.ViewModels.SorterNameViewModel
 <div class="text-center">
     <h1 class="display-4">Name Sorter</h1>
     <p>Created by Hendi dwi Purwanto.</p>
@@ -7,33 +7,22 @@
     @Html.AntiForgeryToken()
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <label>Before Sort</label>
-                <div class="form-group">
-                    <textarea asp-for="FullNameBeforeSort" rows="5" cols="40"></textarea>
-
-                </div>
+            <div class="col-md-12">
                 <div class="form-group">
                     <div class="custom-file">
                         <input type="file" asp-for="TextFile" class="custom-file-input">
-                        <label class="custom-file-label" for="TextFile">upload Unsorted file here</label>
+                        <label class="custom-file-label" for="TextFile">upload Unsorted *.txt file here</label>
                     </div>
                 </div>
-                
+                <div class="form-group">
+                    <input style="width:100%;" type="submit" class="btn btn-success" value="Process to Sort!" />
+
+                </div>
+
             </div>
 
 
-            <div class="col-md-4">
-                <label>After Sort</label>
-                <div class="form-group">
-                    <textarea asp-for="FullNameAfterSort" rows="5" cols="40"></textarea>
 
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-success" value="Process to Sort!" />
-
-                </div>
-            </div>
            
         </div>
 
