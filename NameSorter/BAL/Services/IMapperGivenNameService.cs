@@ -9,10 +9,14 @@ namespace BAL.Services
 {
     public interface IMapperGivenNameService
     {
+        //public Person Map0GivenName(string fullName);
         public Person Map1GivenName(string fullName);
         public Person Map2GivenName(string fullName);
         public Person Map3GivenName(string fullName);
         public Person Map4GivenName(string fullName);
+
         public Person Map5GivenName(string fullName);
+
+        public Person Map6GivenName(string fullName);
     }
 }

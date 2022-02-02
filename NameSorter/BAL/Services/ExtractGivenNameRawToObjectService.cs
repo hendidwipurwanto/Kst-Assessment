@@ -28,7 +28,7 @@ namespace BAL.Services
             {
                 var temp = new Person();
                 var arr = arrOfFullName[i].Split(" ");
-                int givenNameCount = arr.Length;
+                int givenNameCount = arr.Length-1;
                 string fullName = arrOfFullName[i];
                 switch (givenNameCount)
                 {
@@ -50,6 +50,10 @@ namespace BAL.Services
                         break;
                     case 5:
                         temp = _mapperWithGivenNameService.Map5GivenName(fullName);
+                        result.Add(temp);
+                        break;
+                    case 6:
+                        temp = _mapperWithGivenNameService.Map6GivenName(fullName);
                         result.Add(temp);
                         break;
                 }

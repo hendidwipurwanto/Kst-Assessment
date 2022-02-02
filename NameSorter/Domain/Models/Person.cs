@@ -21,5 +21,17 @@ namespace DTO.Models
         public string TenthName { get; set; }
 
         public string LastName { get; set; }
+
+        // this overriden for unit test purpose only
+        public override bool Equals(Object obj)
+        {
+            if (obj is Person)
+            {
+                var that = obj as Person;
+                return this.FirstName == that.FirstName && this.SecondName == that.SecondName && this.ThirdName == that.ThirdName && this.FourthName== that.FourthName && this.FifthName == that.FifthName && this.SixthName== that.SixthName && this.SeventhName == that.SeventhName && this.NinthName== that.NinthName && this.TenthName== that.NinthName && this.LastName== that.LastName;
+            }
+
+            return false;
+        }
     }
 }

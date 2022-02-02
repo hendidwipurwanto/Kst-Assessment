@@ -22,8 +22,8 @@ namespace Unit_Test
 
         [TestMethod]
         public void Given_several_Unsorted_Name_should_Return_Sorted_Name()
-        {
-
+        { 
+            //Arrange
             var _person1 = new Person() { FirstName = "norick", LastName = "Abe" };
             var _person2 = new Person() { FirstName = "Ratu", LastName = "Bunga" };
             var _person3 = new Person() { FirstName = "Ratu", LastName = "Cantika" };
@@ -37,26 +37,15 @@ namespace Unit_Test
             people.Add(_person3);
             people.Add(_person2);
             people.Add(_person1);
+
+            // Act
             var result = _sortNameService.SortAll(people);
-            for (int i = 0; i < expectedpeople.Count ; i++)
-            {
-                for (int j = 0; j <result.Count; j++)
-                {
-                    Assert.AreEqual(expectedpeople[j].FirstName, result[j].FirstName);
-                    Assert.AreEqual(expectedpeople[j].SecondName, result[j].SecondName);
-                    Assert.AreEqual(expectedpeople[j].ThirdName, result[j].ThirdName);
-                    Assert.AreEqual(expectedpeople[j].FourthName, result[j].FourthName);
-                    Assert.AreEqual(expectedpeople[j].FifthName, result[j].FifthName);
-                    Assert.AreEqual(expectedpeople[j].SixthName, result[j].SixthName);
-                    Assert.AreEqual(expectedpeople[j].SeventhName, result[j].SeventhName);
-                    Assert.AreEqual(expectedpeople[j].EighthName, result[j].EighthName);
-                    Assert.AreEqual(expectedpeople[j].NinthName, result[j].NinthName);
-                    Assert.AreEqual(expectedpeople[j].TenthName, result[j].TenthName);
-                    Assert.AreEqual(expectedpeople[j].LastName, result[j].LastName);
+           
+                // Assert
+                CollectionAssert.AreEqual(expectedpeople, result);
+               
 
-                }
-
-            }
+            
             
            
         }
