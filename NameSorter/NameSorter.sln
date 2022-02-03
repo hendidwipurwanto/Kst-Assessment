@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unit_Test", "Unit_Test\Unit
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{4D88D930-D8AB-4233-BEA1-509F6278A3F5}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\Practical documentation.docx = ..\..\Practical documentation.docx
+		..\..\..\Practical documentation.docx = ..\..\..\Practical documentation.docx
 	EndProjectSection
 EndProject
 Global
