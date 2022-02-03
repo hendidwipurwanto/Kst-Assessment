@@ -5,13 +5,18 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{A43EFBF5-AC6B-4DA7-833D-8D992E753DF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{33B76ED5-6403-43DC-B09F-6F6AB786CB9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{33B76ED5-6403-43DC-B09F-6F6AB786CB9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL", "BAL\BAL.csproj", "{49EA802D-0D97-4CB9-A5A1-8B82B05636CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BAL", "BAL\BAL.csproj", "{49EA802D-0D97-4CB9-A5A1-8B82B05636CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "Domain\DTO.csproj", "{8FA156B9-F8FD-44CB-9D71-47458634056F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "Domain\DTO.csproj", "{8FA156B9-F8FD-44CB-9D71-47458634056F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit_Test", "Unit_Test\Unit_Test.csproj", "{4D3C77A3-9674-4E69-BFEB-1EAB953E5680}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unit_Test", "Unit_Test\Unit_Test.csproj", "{4D3C77A3-9674-4E69-BFEB-1EAB953E5680}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{4D88D930-D8AB-4233-BEA1-509F6278A3F5}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Practical documentation.docx = ..\..\Practical documentation.docx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
