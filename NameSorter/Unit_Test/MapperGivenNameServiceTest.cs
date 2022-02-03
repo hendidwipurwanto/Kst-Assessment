@@ -40,10 +40,6 @@ namespace Unit_Test
         [TestMethod]
         public void Given_set_of_two_GivenName_should_Return_in_an_Object_of_Person()
         {
-            //Odetta Sue Kaspar
-            //Roy Ketti Kopfen
-            //Madel Bordie Mapplebeck
-            //Arrange
             string twoGivenName = "Hailey Avie Annakin";
             var expectedResult = new Person() { FirstName = "Hailey", SecondName = "Avie", LastName = "Annakin" };
 
